@@ -1,16 +1,22 @@
-#MY_NAME="Oriol"
-#NOW=`date "+%Y%m%d-%H%M%S"`
-run:
-	@echo "Simple run"	
-docker-run:
-	@echo "Docker run"
+include .env
+URL=http://www.google.com
+TEST_CMD=@echo " --> test username: $(USERNAME); password: $(PASSWORD)"
+BUILD_CMD=@echo " --> build"
+RUN_CMD=@echo " --> run"
+DEBUG_CMD=@echo " --> debug"
+JACOCO_CMD=@echo " --> jacoco"
+
 test:
-	@echo "Simple test"
-unit-test:
-	@echo "Unit tests suite"
-integration-test:
-	@echo "Integration tests suite"
-functional-test:
-	@echo "Functional tests suite"
-stress-test: 
-	@echo "Stress tests suite"
+	$(TEST_CMD)
+
+build:
+	$(BUILD_CMD)
+
+run:
+	$(RUN_CMD)
+
+debug:
+	$(DEBUG_CMD)
+
+jacoco:
+	$(JACOCO_CMD)
